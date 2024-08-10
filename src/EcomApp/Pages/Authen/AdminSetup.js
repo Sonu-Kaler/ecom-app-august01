@@ -7,9 +7,9 @@ const AdminSetup=async()=>{
     const adminRef = doc(db,"Admin","AdminUser");
     const adminDoc = await getDoc(adminRef);
 
-    const name = "admin";
-    const email = "admin@mail.com";
-    const password = "admin2288";
+    const name = process.env.REACT_APP_ADMIN_NAME;
+    const email = process.env.REACT_APP_ADMIN_EMAIL;
+    const password = process.env.REACT_APP_ADMIN_PASSWORD;
 
     if(!adminDoc.exists()){
         try{
